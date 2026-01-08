@@ -10,7 +10,7 @@
 local r = reaper
 local M = {}
 
-local _script_dir = (debug.getinfo(1, "S").source:sub(2):gsub("\","/"):match("^(.*[/])") or "")
+local _script_dir = (debug.getinfo(1, "S").source:sub(2):gsub("\\","/"):match("^(.*[/])") or "")
 local RT = dofile(_script_dir .. "../lib/ifls_runtime.lua")
 local ROOT = RT.add_package_paths(RT.find_root(), {"Core","Domain"})
 local core_path = ROOT .. "Core/"
